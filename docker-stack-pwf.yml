@@ -1,0 +1,17 @@
+version: '3'
+
+services:
+  adapter:
+    image: dtr.rogfk.no/fint-beta/adapter-ressurser-tilganger-demo:0.0.0-0.99.1
+    environment:
+      TZ: Europe/Oslo
+    deploy:
+      placement:
+        constraints:
+          - node.role == worker
+      replicas: 1
+      restart_policy:
+        condition: on-failure
+        delay: 5s
+        max_attempts: 3
+        window: 120s
