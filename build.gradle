@@ -82,7 +82,7 @@ jar {
     manifest {
         attributes(
                 "Manifest-Version": "1.0",
-                "Main-Class": "no.fint.provider.Application",
+                "Main-Class": "no.fint.Application",
                 "Specification-Version": "${apiVersion}",
                 "Implementation-Version": "${version}",
                 "Class-Path": configurations.compile.collect { it.getName() }.join(' ')
